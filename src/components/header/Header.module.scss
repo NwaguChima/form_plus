@@ -1,0 +1,16 @@
+@use "../../styles/variables.scss" as varr;
+
+.header {
+  background-color: varr.$page_color;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+  }
+}
