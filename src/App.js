@@ -1,16 +1,17 @@
-import styles from "./App.module.scss";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <div className={styles.App}>
-      Hello React Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Laborum sed quibusdam nulla veritatis facilis cum, perspiciatis tenetur
-      voluptatum et possimus soluta ratione at adipisci amet, ipsum quo. Sit,
-      tempora voluptate. Hello React Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Laborum sed quibusdam nulla veritatis facilis cum,
-      perspiciatis tenetur voluptatum et possimus soluta ratione at adipisci
-      amet, ipsum quo. Sit, tempora voluptate.
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+
+        {/* Catch all -  */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
   );
 }
 
