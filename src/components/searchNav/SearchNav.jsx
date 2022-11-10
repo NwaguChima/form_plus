@@ -1,6 +1,7 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
 import CustomSelect from "../customSelect/CustomSelect";
+import styles from "./SearchNav.module.scss";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -10,8 +11,8 @@ const options = [
 
 const SearchNav = () => {
   return (
-    <nav>
-      <div>
+    <nav className={styles.nav}>
+      <div className={styles.nav__input}>
         <input
           type="text"
           name="search"
@@ -23,9 +24,24 @@ const SearchNav = () => {
         </i>
       </div>
 
-      <div>
+      <div className={styles.nav__select}>
         <p>Sort By:</p>
-        <CustomSelect options={options} label="Category" />
+        <CustomSelect
+          options={options}
+          label="Category"
+          placeholder="Select Category"
+        />
+
+        <CustomSelect
+          options={options}
+          label="Order"
+          placeholder="Select Order"
+        />
+        <CustomSelect
+          options={options}
+          label="Date"
+          placeholder="Select Date"
+        />
       </div>
     </nav>
   );

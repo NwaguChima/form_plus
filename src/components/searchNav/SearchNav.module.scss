@@ -1,0 +1,52 @@
+@use "../../styles/variables.scss" as varr;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.4rem;
+    padding-left: 2.5rem;
+    border: 1px solid varr.$border_color;
+    height: 4.5rem;
+    width: 32rem;
+
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+
+    input {
+      border: none;
+      color: varr.$text_color;
+      height: 100%;
+      width: 90%;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: varr.$placeholder_color;
+      }
+    }
+
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: varr.$placeholder_color;
+      font-weight: 100;
+    }
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+  }
+}
