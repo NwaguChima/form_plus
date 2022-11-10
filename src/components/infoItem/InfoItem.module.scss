@@ -1,0 +1,29 @@
+@use "../../styles/variables.scss" as varr;
+
+.info {
+  display: flex;
+  align-items: center;
+  background-color: varr.$info_bg;
+  padding: 1.8rem 20rem;
+  margin-top: 7rem;
+  margin-bottom: 4rem;
+
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fcb30a;
+    margin-right: 1rem;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
