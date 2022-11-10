@@ -4,4 +4,12 @@
   max-width: 153.6rem;
   margin: 0 auto;
   padding: varr.$main_padding;
+
+  @media screen and (max-width: 1200px) {
+    padding: 5.9rem 5.9rem;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 5.9rem 3rem;
+  }
 }
