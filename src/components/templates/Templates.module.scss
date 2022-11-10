@@ -1,6 +1,11 @@
 @use "../../styles/variables.scss" as varr;
 
 .container {
+  margin-top: 3rem;
+  @media screen and (max-width: 900px) {
+    margin-top: 7rem;
+  }
+
   &__heading {
     display: flex;
     justify-content: space-between;
