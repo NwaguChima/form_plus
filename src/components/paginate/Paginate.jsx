@@ -12,7 +12,7 @@ const Paginate = () => {
         <button>Previous</button>
       </div>
       <div className={styles.paginate__item}>
-        <span>1</span>
+        <span className={styles.active}>1</span>
         <span>of</span>
         <span>14</span>
       </div>

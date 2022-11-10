@@ -13,6 +13,15 @@
     cursor: pointer;
   }
 
+  &__item {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 0.7rem;
+    }
+  }
+
   &__next,
   &__prev {
     display: flex;
@@ -54,4 +63,19 @@
   &__prev:active {
     background-color: varr.$border_color;
   }
+}
+
+.active {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: varr.$radius;
+  -webkit-border-radius: varr.$radius;
+  -moz-border-radius: varr.$radius;
+  -ms-border-radius: varr.$radius;
+  -o-border-radius: varr.$radius;
+
+  border: 1px solid varr.$border_color;
 }
