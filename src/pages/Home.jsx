@@ -1,7 +1,12 @@
 import React from "react";
+import SearchNav from "../components/searchNav/SearchNav";
 
 const Home = () => {
-  return <div>Home Page loaded....</div>;
+  return (
+    <div>
+      <SearchNav />
+    </div>
+  );
 };
 
 export default Home;
