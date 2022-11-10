@@ -1,4 +1,5 @@
 import React from "react";
+import Paginate from "../paginate/Paginate";
 import Template from "../template/Template";
 import styles from "./Templates.module.scss";
 
@@ -19,6 +20,7 @@ const Templates = () => {
         <Template />
         <Template />
       </div>
+      <Paginate />
     </div>
   );
 };
