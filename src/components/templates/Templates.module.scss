@@ -15,4 +15,12 @@
       color: varr.$placeholder_color;
     }
   }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+
+    grid-gap: 2.4rem;
+    margin-top: 2.4rem;
+  }
 }

@@ -1,4 +1,56 @@
 @use "../../styles/variables.scss" as varr;
 
 .template {
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  padding-bottom: 0;
+  overflow: hidden;
+
+  border-radius: varr.$radius;
+  -webkit-border-radius: varr.$radius;
+  -moz-border-radius: varr.$radius;
+  -ms-border-radius: varr.$radius;
+  -o-border-radius: varr.$radius;
+
+  &__top {
+    padding: 1.9rem;
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: 3rem;
+      margin-bottom: 1rem;
+      color: varr.$head_color;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
+  }
+
+  &__bottom {
+    background-color: varr.$btn_bg;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: varr.$green_color;
+
+      button {
+        color: varr.$card_bg;
+      }
+    }
+
+    button {
+      padding: 1rem 1.9rem;
+      border: none;
+      background: none;
+      font-size: 1.4rem;
+      color: varr.$green_color;
+    }
+  }
 }
