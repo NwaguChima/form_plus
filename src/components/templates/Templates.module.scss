@@ -1,7 +1,7 @@
 @use "../../styles/variables.scss" as varr;
 
 .container {
-  margin-top: 3rem;
+  margin-top: 4rem;
   @media screen and (max-width: 900px) {
     margin-top: 7rem;
   }
@@ -25,7 +25,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
 
-    grid-gap: 2.4rem;
+    grid-gap: 5rem;
     margin-top: 2.4rem;
+
+    @media screen and (max-width: 1320px) {
+      grid-gap: 3rem;
+    }
   }
 }
