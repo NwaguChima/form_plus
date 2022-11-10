@@ -1,0 +1,85 @@
+@use "../../styles/variables.scss" as varr;
+
+.paginate {
+  padding: 0 5rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 607px) {
+    padding: 0;
+  }
+
+  button {
+    border: none;
+    background: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 0.7rem;
+    }
+  }
+
+  &__next,
+  &__prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.4rem 0.5rem;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+
+    border-radius: varr.$radius;
+    -webkit-border-radius: varr.$radius;
+    -moz-border-radius: varr.$radius;
+    -ms-border-radius: varr.$radius;
+    -o-border-radius: varr.$radius;
+
+    i {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+  }
+
+  &__next {
+    padding-left: 1.2rem;
+  }
+
+  &__prev {
+    padding-right: 1.2rem;
+  }
+
+  &__next:hover,
+  &__next:active,
+  &__prev:hover,
+  &__prev:active {
+    background-color: varr.$border_color;
+  }
+}
+
+.active {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: varr.$radius;
+  -webkit-border-radius: varr.$radius;
+  -moz-border-radius: varr.$radius;
+  -ms-border-radius: varr.$radius;
+  -o-border-radius: varr.$radius;
+
+  border: 1px solid varr.$border_color;
+}

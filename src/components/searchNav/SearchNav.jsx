@@ -1,13 +1,8 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
+import { categoryOptions, orderOptions } from "../../utils/optionFile";
 import CustomSelect from "../customSelect/CustomSelect";
 import styles from "./SearchNav.module.scss";
-
-const options = [
-  { value: "vanilla", label: "Vanilla" },
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-];
 
 const SearchNav = () => {
   return (
@@ -26,10 +21,9 @@ const SearchNav = () => {
 
       <div className={styles.nav__select}>
         <p>Sort By:</p>
-        <CustomSelect options={options} label="Category" />
-
-        <CustomSelect options={options} label="Order" />
-        <CustomSelect options={options} label="Date" />
+        <CustomSelect options={categoryOptions} label="Category" />
+        <CustomSelect options={orderOptions} label="Order" />
+        <CustomSelect options={orderOptions} label="Date" />
       </div>
     </nav>
   );

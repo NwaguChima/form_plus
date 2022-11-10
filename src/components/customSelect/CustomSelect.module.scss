@@ -6,11 +6,11 @@
     height: 4.9rem;
     width: 16rem;
 
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    border-radius: varr.$radius;
+    -webkit-border-radius: varr.$radius;
+    -moz-border-radius: varr.$radius;
+    -ms-border-radius: varr.$radius;
+    -o-border-radius: varr.$radius;
 
     position: relative;
 
