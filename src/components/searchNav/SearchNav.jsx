@@ -1,6 +1,6 @@
 import React from "react";
 import { FiSearch } from "react-icons/fi";
-import Select from "react-select";
+import CustomSelect from "../customSelect/CustomSelect";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -25,6 +25,7 @@ const SearchNav = () => {
 
       <div>
         <p>Sort By:</p>
+        <CustomSelect options={options} label="Category" />
       </div>
     </nav>
   );
