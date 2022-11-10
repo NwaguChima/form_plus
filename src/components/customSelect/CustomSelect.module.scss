@@ -1,0 +1,31 @@
+@use "../../styles/variables.scss" as varr;
+
+.select {
+  fieldset {
+    border: 1px solid #c4c4c4;
+    height: 4.9rem;
+    width: 16rem;
+
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+
+    position: relative;
+
+    // overflow: hidden;
+
+    legend {
+      margin-left: 1.5rem;
+      color: varr.$placeholder_color;
+      font-size: 1rem;
+      padding: 0 0.5rem;
+      z-index: 10000000 !important;
+    }
+
+    div {
+      //   margin-top: -5px;
+    }
+  }
+}

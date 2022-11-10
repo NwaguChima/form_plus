@@ -4,9 +4,9 @@ import CustomSelect from "../customSelect/CustomSelect";
 import styles from "./SearchNav.module.scss";
 
 const options = [
+  { value: "vanilla", label: "Vanilla" },
   { value: "chocolate", label: "Chocolate" },
   { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
 ];
 
 const SearchNav = () => {
@@ -26,22 +26,10 @@ const SearchNav = () => {
 
       <div className={styles.nav__select}>
         <p>Sort By:</p>
-        <CustomSelect
-          options={options}
-          label="Category"
-          placeholder="Select Category"
-        />
+        <CustomSelect options={options} label="Category" />
 
-        <CustomSelect
-          options={options}
-          label="Order"
-          placeholder="Select Order"
-        />
-        <CustomSelect
-          options={options}
-          label="Date"
-          placeholder="Select Date"
-        />
+        <CustomSelect options={options} label="Order" />
+        <CustomSelect options={options} label="Date" />
       </div>
     </nav>
   );

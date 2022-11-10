@@ -3,6 +3,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   &__input {
     display: flex;
@@ -48,5 +49,15 @@
   &__select {
     display: flex;
     align-items: center;
+
+    p {
+      margin-right: 2rem;
+      color: varr.$placeholder_color;
+      font-size: 1.4rem;
+    }
+
+    div:not(:last-child) {
+      margin-right: 2rem;
+    }
   }
 }
