@@ -5,6 +5,10 @@
   justify-content: space-between;
   align-items: center;
 
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
   &__input {
     display: flex;
     align-items: center;
@@ -20,6 +24,10 @@
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
+
+    @media screen and (max-width: 1200px) {
+      margin-bottom: 1.5rem;
+    }
 
     input {
       border: none;
@@ -50,14 +58,27 @@
     display: flex;
     align-items: center;
 
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+    }
+
     p {
       margin-right: 2rem;
       color: varr.$placeholder_color;
       font-size: 1.4rem;
+
+      @media screen and (max-width: 725px) {
+        display: none;
+      }
     }
 
     div:not(:last-child) {
       margin-right: 2rem;
+
+      @media screen and (max-width: 500px) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
     }
   }
 }
