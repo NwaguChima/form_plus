@@ -4,6 +4,7 @@ import { categoryOptions, orderOptions } from "../../utils/optionFile";
 import CustomSelect from "../customSelect/CustomSelect";
 import styles from "./SearchNav.module.scss";
 
+// importing options from optionFile.js
 const SearchNav = () => {
   return (
     <nav className={styles.nav}>
