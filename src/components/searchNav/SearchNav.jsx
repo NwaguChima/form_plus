@@ -15,7 +15,6 @@ import {
 import CustomSelect from "../customSelect/CustomSelect";
 import styles from "./SearchNav.module.scss";
 
-// importing options from optionFile.js
 const SearchNav = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
