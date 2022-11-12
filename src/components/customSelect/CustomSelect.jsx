@@ -3,6 +3,10 @@ import Select from "react-select";
 import styles from "./CustomSelect.module.scss";
 
 const CustomSelect = ({ options, label, handleChange, value }) => {
+  const defaultValue = (options, value) => {
+    return options ? options.find((option) => option.value === value) : "";
+  };
+
   const selectStyles = {
     control: (base, state) => {
       return {
@@ -28,9 +32,8 @@ const CustomSelect = ({ options, label, handleChange, value }) => {
       <fieldset>
         <legend>{label}</legend>
         <Select
-          value={value}
+          value={defaultValue(options, value) || null}
           options={options}
-          defaultValue={options[0]}
           styles={selectStyles}
           onChange={(value) => handleChange(value)}
           components={{

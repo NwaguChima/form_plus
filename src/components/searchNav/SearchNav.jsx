@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  selectCategory,
   selectDate,
   selectOrder,
   setCategoryFilter,
@@ -21,6 +22,7 @@ const SearchNav = () => {
   const [search, setSearch] = useState("");
   const order = useSelector(selectOrder);
   const date = useSelector(selectDate);
+  const category = useSelector(selectCategory);
   const dispatch = useDispatch();
 
   function handleSearch(e) {
@@ -78,6 +80,7 @@ const SearchNav = () => {
           options={categoryOptions}
           label="Category"
           handleChange={handleFilters}
+          value={category}
         />
         <CustomSelect
           options={orderOptions}
