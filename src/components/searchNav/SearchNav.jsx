@@ -1,12 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { MdOutlineClear } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
-  selectSearch,
-  selectCategory,
-  selectDate,
-  selectOrder,
   setCategoryFilter,
   setDateFilter,
   setOrderFilter,
@@ -24,7 +19,6 @@ import styles from "./SearchNav.module.scss";
 const SearchNav = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
-  const searchStore = useSelector(selectCategory);
 
   function handleSearch(e) {
     if (search.length) {
@@ -49,10 +43,6 @@ const SearchNav = () => {
       dispatch(setOrderFilter(value.value));
     }
   }
-
-  useEffect(() => {
-    console.log("searchStore", searchStore);
-  }, [searchStore]);
 
   return (
     <nav className={styles.nav}>
