@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 import styles from "./CustomSelect.module.scss";
 
-const CustomSelect = ({ options, label, handleChange }) => {
+const CustomSelect = ({ options, label, handleChange, value }) => {
   const selectStyles = {
     control: (base, state) => {
       return {
@@ -28,6 +28,7 @@ const CustomSelect = ({ options, label, handleChange }) => {
       <fieldset>
         <legend>{label}</legend>
         <Select
+          value={value}
           options={options}
           defaultValue={options[0]}
           styles={selectStyles}

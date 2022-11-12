@@ -12,7 +12,7 @@
   -ms-border-radius: varr.$radius;
   -o-border-radius: varr.$radius;
 
-  height: 23rem;
+  height: 17rem;
 
   &__top {
     padding: 1.9rem;
@@ -23,11 +23,21 @@
       line-height: 3rem;
       margin-bottom: 1rem;
       color: varr.$head_color;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
 
     p {
       font-size: 1.4rem;
       line-height: 1.7rem;
+
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
   }
 
@@ -57,6 +67,12 @@
       background: none;
       font-size: 1.4rem;
       color: varr.$green_color;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        width: 100%;
+      }
     }
   }
 }

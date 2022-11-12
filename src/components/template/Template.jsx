@@ -1,18 +1,19 @@
 import React from "react";
 import styles from "./Template.module.scss";
 
-const Template = () => {
+const Template = ({ id, description, link, name }) => {
   return (
-    <div className={styles.template}>
+    <div className={styles.template} key={id}>
       <div className={styles.template__top}>
-        <h2>Alumni Membership Form Template</h2>
-        <p>
-          Engage your alumni network better with this alumni registration from
-          templates. Embed this in your website...
-        </p>
+        <h2>{name}</h2>
+        <p>{description}</p>
       </div>
       <div className={styles.template__bottom}>
-        <button>Use Template</button>
+        <button>
+          <a href={link} target="_blank" rel="noreferrer">
+            Use Template
+          </a>
+        </button>
       </div>
     </div>
   );
