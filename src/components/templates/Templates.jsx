@@ -1,10 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import {
-  selectAllTemplates,
-  useGetTemplatesQuery,
-} from "../../features/template/templateSlice";
+import { selectCategory } from "../../features/template/filterSlice";
+import { useGetTemplatesQuery } from "../../features/template/templateSlice";
 import Paginate from "../paginate/Paginate";
 import Template from "../template/Template";
 import styles from "./Templates.module.scss";
@@ -18,17 +15,17 @@ const Templates = () => {
   //   isLoading,
   // } = useGetTemplatesQuery();
 
-  // console.log("templates", templates);
+  // console.log("templates", isLoading, isSuccess, templates);
 
-  // const templates = useSelector(selectAllTemplates);
-  // console.log("templates", templates);
+  // // select category from redux store
+  // const category = useSelector(selectCategory);
+  // console.log("category", category);
 
   return (
     <div className={styles.container}>
       <div className={styles.container__heading}>
-        {/* <h3>All Templates</h3> */}
-        <Link to="/e">All Templates</Link>
-        <p>2000 templates</p>
+        {/* <h3>{category} Templates</h3>
+        <p>{templates?.ids.length} templates</p> */}
       </div>
       <div className={styles.container__list}>
         <Template />

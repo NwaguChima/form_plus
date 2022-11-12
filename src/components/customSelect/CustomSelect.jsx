@@ -31,7 +31,7 @@ const CustomSelect = ({ options, label, handleChange }) => {
           options={options}
           defaultValue={options[0]}
           styles={selectStyles}
-          onChange={handleChange}
+          onChange={(value) => handleChange(value)}
           components={{
             IndicatorSeparator: () => null,
           }}
