@@ -70,8 +70,8 @@
 }
 
 .active {
-  height: 2rem;
-  width: 2rem;
+  min-height: 2rem;
+  min-width: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;

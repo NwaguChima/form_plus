@@ -11,12 +11,15 @@ const Paginate = ({ templates, setPageTemplates }) => {
   const indexOfFirstTemplate = indexOfLastTemplate - templatesPerPage;
 
   const handleNext = () => {
-    console.log("next");
-    setCurrentPage(currentPage + 1);
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   const handlePrev = () => {
-    setCurrentPage(currentPage - 1);
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
   useEffect(() => {

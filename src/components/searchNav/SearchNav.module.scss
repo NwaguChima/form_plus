@@ -51,6 +51,15 @@
       cursor: pointer;
       color: varr.$placeholder_color;
       font-weight: 100;
+      transition: all 0.2s ease-in-out;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+
+      &:hover {
+        scale: 1.2;
+      }
     }
   }
 

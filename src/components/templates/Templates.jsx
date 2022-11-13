@@ -56,7 +56,7 @@ const Templates = () => {
   if (isLoading) {
     content = <Spinner />;
   } else if (isError) {
-    content = <div>{error}</div>;
+    content = <div>Error: {error}</div>;
   } else if (isSuccess) {
     content = (
       <div className={styles.container}>
