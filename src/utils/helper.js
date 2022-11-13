@@ -34,3 +34,15 @@ export function handleOrder(inputArr, order, date) {
 
   return outputArr;
 }
+
+export function handleCategory(templates, category) {
+  let templateArr = templates?.ids.map((id) => templates.entities[id]);
+
+  if (category !== "All") {
+    templateArr = templateArr.filter((template) =>
+      template.category.includes(category)
+    );
+  }
+
+  return templateArr;
+}

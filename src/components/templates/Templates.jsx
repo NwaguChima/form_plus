@@ -7,7 +7,7 @@ import {
   selectSearch,
 } from "../../features/template/filterSlice";
 import { useGetTemplatesQuery } from "../../features/template/templateSlice";
-import { handleOrder } from "../../utils/helper";
+import { handleCategory, handleOrder } from "../../utils/helper";
 import Paginate from "../paginate/Paginate";
 import Template from "../template/Template";
 import styles from "./Templates.module.scss";
@@ -32,31 +32,24 @@ const Templates = () => {
     isLoading,
   } = useGetTemplatesQuery();
 
-  function handleCategory(templates) {
-    let templateArr = templates?.ids.map((id) => templates.entities[id]);
-
-    if (category !== "All") {
-      templateArr = templateArr.filter((template) =>
-        template.category.includes(category)
-      );
-    }
-
-    return templateArr;
-  }
-
   useEffect(() => {
     if (isSuccess) {
-      const templateArr = handleCategory(templates);
+      const templateArr = handleCategory(templates, category);
       setFilteredTemplates(templateArr);
     }
-  }, [category, templates]);
+  }, [category, templates, isSuccess]);
 
-  useEffect(() => {
-    let templateArr = filteredTemplates.filter(
+  function handleSearch(templates, search) {
+    let templateArr = templates.filter(
       (template) =>
         template.name.toLowerCase().includes(search.toLowerCase()) ||
         template.description.toLowerCase().includes(search.toLowerCase())
     );
+
+    return templateArr;
+  }
+  useEffect(() => {
+    let templateArr = handleSearch(filteredTemplates, search);
 
     setSearchedTemplates(templateArr);
   }, [search, filteredTemplates]);
