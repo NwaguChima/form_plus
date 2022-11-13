@@ -9,6 +9,7 @@ import {
 import { useGetTemplatesQuery } from "../../features/template/templateSlice";
 import { handleCategory, handleOrder, handleSearch } from "../../utils/helper";
 import Paginate from "../paginate/Paginate";
+import Spinner from "../spinner/Spinner";
 import Template from "../template/Template";
 import styles from "./Templates.module.scss";
 
@@ -50,6 +51,10 @@ const Templates = () => {
 
     setOrderedTemplates(sortedTemplates);
   }, [order, date, pageTemplates]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className={styles.container}>
