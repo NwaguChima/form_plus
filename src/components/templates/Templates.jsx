@@ -32,18 +32,21 @@ const Templates = () => {
     isLoading,
   } = useGetTemplatesQuery();
 
-  console.log("templates", isLoading, isSuccess, templates);
+  function handleCategory(templates) {
+    let templateArr = templates?.ids.map((id) => templates.entities[id]);
+
+    if (category !== "All") {
+      templateArr = templateArr.filter((template) =>
+        template.category.includes(category)
+      );
+    }
+
+    return templateArr;
+  }
 
   useEffect(() => {
-    if (templates?.ids.length) {
-      let templateArr = templates?.ids.map((id) => templates.entities[id]);
-
-      if (category !== "All") {
-        templateArr = templateArr.filter((template) =>
-          template.category.includes(category)
-        );
-      }
-
+    if (isSuccess) {
+      const templateArr = handleCategory(templates);
       setFilteredTemplates(templateArr);
     }
   }, [category, templates]);
