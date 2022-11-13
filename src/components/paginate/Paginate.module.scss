@@ -83,3 +83,13 @@
 
   border: 1px solid varr.$border_color;
 }
+
+.first {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.last {
+  opacity: 0;
+  visibility: hidden;
+}

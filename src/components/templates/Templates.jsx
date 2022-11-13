@@ -117,7 +117,7 @@ const Templates = () => {
           );
         })}
       </div>
-      <Paginate />
+      <Paginate templates={searchedTemplates} />
     </div>
   );
 };
