@@ -7,7 +7,7 @@ import {
   selectSearch,
 } from "../../features/template/filterSlice";
 import { useGetTemplatesQuery } from "../../features/template/templateSlice";
-import { handleCategory, handleOrder } from "../../utils/helper";
+import { handleCategory, handleOrder, handleSearch } from "../../utils/helper";
 import Paginate from "../paginate/Paginate";
 import Template from "../template/Template";
 import styles from "./Templates.module.scss";
@@ -39,15 +39,6 @@ const Templates = () => {
     }
   }, [category, templates, isSuccess]);
 
-  function handleSearch(templates, search) {
-    let templateArr = templates.filter(
-      (template) =>
-        template.name.toLowerCase().includes(search.toLowerCase()) ||
-        template.description.toLowerCase().includes(search.toLowerCase())
-    );
-
-    return templateArr;
-  }
   useEffect(() => {
     let templateArr = handleSearch(filteredTemplates, search);
 

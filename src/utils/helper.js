@@ -46,3 +46,13 @@ export function handleCategory(templates, category) {
 
   return templateArr;
 }
+
+export function handleSearch(templates, search) {
+  let templateArr = templates.filter(
+    (template) =>
+      template.name.toLowerCase().includes(search.toLowerCase()) ||
+      template.description.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return templateArr;
+}
