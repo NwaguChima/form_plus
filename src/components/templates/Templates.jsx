@@ -52,35 +52,40 @@ const Templates = () => {
     setOrderedTemplates(sortedTemplates);
   }, [order, date, pageTemplates]);
 
+  let content;
   if (isLoading) {
-    return <Spinner />;
+    content = <Spinner />;
+  } else if (isError) {
+    content = <div>{error}</div>;
+  } else if (isSuccess) {
+    content = (
+      <div className={styles.container}>
+        <div className={styles.container__heading}>
+          <h3>{category} Templates</h3>
+          <p>{searchedTemplates.length} templates</p>
+        </div>
+        <div className={styles.container__list}>
+          {orderedTemplates.map((temp) => {
+            const { name, link, description, id } = temp;
+            return (
+              <Template
+                key={id}
+                name={name}
+                link={link}
+                description={description}
+              />
+            );
+          })}
+        </div>
+        <Paginate
+          templates={searchedTemplates}
+          setPageTemplates={setPageTemplates}
+        />
+      </div>
+    );
   }
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.container__heading}>
-        <h3>{category} Templates</h3>
-        <p>{searchedTemplates.length} templates</p>
-      </div>
-      <div className={styles.container__list}>
-        {orderedTemplates.map((temp) => {
-          const { name, link, description, id } = temp;
-          return (
-            <Template
-              key={id}
-              name={name}
-              link={link}
-              description={description}
-            />
-          );
-        })}
-      </div>
-      <Paginate
-        templates={searchedTemplates}
-        setPageTemplates={setPageTemplates}
-      />
-    </div>
-  );
+  return content;
 };
 
 export default Templates;
