@@ -2,23 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "./Paginate.module.scss";
 import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
 
-const Paginate = ({ templates }) => {
+const Paginate = ({ templates, setPageTemplates }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [templatesPerPage] = useState(100);
-  const [totalPages, setTotalPages] = useState(templates.length / 100);
+  const [templatesPerPage] = useState(102);
+  const [totalPages, setTotalPages] = useState();
 
   const indexOfLastTemplate = currentPage * templatesPerPage;
   const indexOfFirstTemplate = indexOfLastTemplate - templatesPerPage;
-  const currentTemplates = templates.slice(
-    indexOfFirstTemplate,
-    indexOfLastTemplate
-  );
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-  const handleClick = (e) => {
-    setCurrentPage(Number(e.target.id));
-  };
 
   const handleNext = () => {
     console.log("next");
@@ -32,6 +22,15 @@ const Paginate = ({ templates }) => {
   useEffect(() => {
     setTotalPages(Math.ceil(templates.length / templatesPerPage));
   }, [templates, templatesPerPage]);
+
+  useEffect(() => {
+    const currentTemplates = templates.slice(
+      indexOfFirstTemplate,
+      indexOfLastTemplate
+    );
+
+    setPageTemplates(currentTemplates);
+  }, [indexOfFirstTemplate, indexOfLastTemplate, templates, setPageTemplates]);
 
   return (
     <div className={styles.paginate}>
@@ -51,7 +50,12 @@ const Paginate = ({ templates }) => {
         <span>of</span>
         <span>{totalPages}</span>
       </div>
-      <div className={styles.paginate__next} onClick={handleNext}>
+      <div
+        className={`${styles.paginate__next} ${
+          currentPage === totalPages && styles.last
+        }`}
+        onClick={handleNext}
+      >
         <button>Next</button>
         <i>
           <MdOutlineNavigateNext />

@@ -21,6 +21,8 @@ const Templates = () => {
   const [searchedTemplates, setSearchedTemplates] = useState([]);
   const [orderedTemplates, setOrderedTemplates] = useState([]);
 
+  const [pageTemplates, setPageTemplates] = useState([]);
+
   const {
     data: templates,
     isError,
@@ -93,10 +95,10 @@ const Templates = () => {
   }
 
   useEffect(() => {
-    const sortedTemplates = handleOrder(searchedTemplates, order, date);
+    const sortedTemplates = handleOrder(pageTemplates, order, date);
 
     setOrderedTemplates(sortedTemplates);
-  }, [order, date, searchedTemplates]);
+  }, [order, date, pageTemplates]);
 
   return (
     <div className={styles.container}>
@@ -117,7 +119,10 @@ const Templates = () => {
           );
         })}
       </div>
-      <Paginate templates={searchedTemplates} />
+      <Paginate
+        templates={searchedTemplates}
+        setPageTemplates={setPageTemplates}
+      />
     </div>
   );
 };
