@@ -7,6 +7,7 @@ import {
   selectSearch,
 } from "../../features/template/filterSlice";
 import { useGetTemplatesQuery } from "../../features/template/templateSlice";
+import { handleOrder } from "../../utils/helper";
 import Paginate from "../paginate/Paginate";
 import Template from "../template/Template";
 import styles from "./Templates.module.scss";
@@ -57,43 +58,6 @@ const Templates = () => {
     setSearchedTemplates(templateArr);
   }, [search, filteredTemplates]);
 
-  function handleOrder(inputArr, order, date) {
-    let outputArr = [...inputArr];
-
-    if (order !== "Default") {
-      switch (order) {
-        case "Ascending":
-          return outputArr.sort((a, b) => a.name.localeCompare(b.name));
-        case "Descending":
-          return outputArr.sort((a, b) => b.name.localeCompare(a.name));
-        default:
-          return outputArr;
-      }
-    } else if (date !== "Default") {
-      switch (date) {
-        case "Ascending":
-          return outputArr.sort((a, b) => {
-            let aDate = Date.now(a.createdAt);
-            let bDate = Date.now(b.createdAt);
-
-            return aDate - bDate;
-          });
-        case "Descending":
-          return outputArr.sort((a, b) => {
-            let aDate = Date.now(a.createdAt);
-            let bDate = Date.now(b.createdAt);
-
-            return bDate - aDate;
-          });
-
-        default:
-          return outputArr;
-      }
-    }
-
-    return outputArr;
-  }
-
   useEffect(() => {
     const sortedTemplates = handleOrder(pageTemplates, order, date);
 
@@ -104,10 +68,10 @@ const Templates = () => {
     <div className={styles.container}>
       <div className={styles.container__heading}>
         <h3>{category} Templates</h3>
-        <p>{orderedTemplates.length} templates</p>
+        <p>{searchedTemplates.length} templates</p>
       </div>
       <div className={styles.container__list}>
-        {orderedTemplates.slice(0, 100).map((temp) => {
+        {orderedTemplates.map((temp) => {
           const { name, link, description, id } = temp;
           return (
             <Template
