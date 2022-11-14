@@ -3,7 +3,7 @@ import styles from "./Template.module.scss";
 
 const Template = ({ id, description, link, name }) => {
   return (
-    <div className={styles.template} key={id}>
+    <div className={styles.template} key={id} data-testId="template">
       <div className={styles.template__top}>
         <h2>{name}</h2>
         <p>{description}</p>
