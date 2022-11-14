@@ -3,7 +3,7 @@
 .select {
   fieldset {
     border: 1px solid #c4c4c4;
-    height: 4.9rem;
+    height: 3.9rem;
     width: 16rem;
 
     border-radius: varr.$radius;
@@ -13,6 +13,7 @@
     -o-border-radius: varr.$radius;
 
     position: relative;
+    z-index: 10000000 !important;
 
     // overflow: hidden;
 
@@ -23,9 +24,23 @@
       padding: 0 0.5rem;
       z-index: 10000000 !important;
     }
+  }
+}
 
-    div {
-      //   margin-top: -5px;
+.selectholder {
+  width: 100%;
+  height: 100%;
+  padding-left: 1.5rem;
+  padding-right: 0.5rem;
+
+  select {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+
+    &:focus {
+      outline: none;
     }
   }
 }

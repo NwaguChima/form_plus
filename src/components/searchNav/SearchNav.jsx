@@ -39,14 +39,16 @@ const SearchNav = () => {
     }
   }
 
-  function handleFilters(value) {
-    if (value.name === "category") {
-      dispatch(setCategoryFilter(value.value));
-    } else if (value.name === "date") {
-      dispatch(setDateFilter(value.value));
+  function handleFilters(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    if (name === "category") {
+      dispatch(setCategoryFilter(value));
+    } else if (name === "date") {
+      dispatch(setDateFilter(value));
       dispatch(setOrderFilter("Default"));
-    } else if (value.name === "order") {
-      dispatch(setOrderFilter(value.value));
+    } else if (name === "order") {
+      dispatch(setOrderFilter(value));
       dispatch(setDateFilter("Default"));
     }
   }
@@ -81,18 +83,21 @@ const SearchNav = () => {
           label="Category"
           handleChange={handleFilters}
           value={category}
+          name="category"
         />
         <CustomSelect
           options={orderOptions}
           label="Order"
           handleChange={handleFilters}
           value={order}
+          name="order"
         />
         <CustomSelect
           options={dateOptions}
           label="Date"
           handleChange={handleFilters}
           value={date}
+          name="date"
         />
       </div>
     </nav>

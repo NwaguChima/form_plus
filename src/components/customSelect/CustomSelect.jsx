@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 import styles from "./CustomSelect.module.scss";
 
-const CustomSelect = ({ options, label, handleChange, value }) => {
+const CustomSelect = ({ options, label, handleChange, value, name }) => {
   const defaultValue = (options, value) => {
     return options ? options.find((option) => option.value === value) : "";
   };
@@ -15,7 +15,7 @@ const CustomSelect = ({ options, label, handleChange, value }) => {
         height: "40%",
         border: 0,
         boxShadow: "none",
-        fontSize: "14px",
+        fontSize: "12px",
         paddingLeft: "10px",
       };
     },
@@ -31,15 +31,24 @@ const CustomSelect = ({ options, label, handleChange, value }) => {
     <div className={styles.select}>
       <fieldset>
         <legend>{label}</legend>
-        <Select
-          value={defaultValue(options, value) || null}
-          options={options}
-          styles={selectStyles}
-          onChange={(value) => handleChange(value)}
-          components={{
-            IndicatorSeparator: () => null,
-          }}
-        />
+        <div className={styles.selectholder}>
+          {/* <Select
+            value={defaultValue(options, value) || null}
+            options={options}
+            styles={selectStyles}
+            onChange={(value) => handleChange(value)}
+            components={{
+              IndicatorSeparator: () => null,
+            }}
+          /> */}
+          <select name={name} onChange={(e) => handleChange(e)}>
+            {options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </fieldset>
     </div>
   );
