@@ -5,11 +5,11 @@ import Templates from "../components/templates/Templates";
 
 const Home = () => {
   return (
-    <div>
+    <main>
       <SearchNav />
       <InfoItem />
       <Templates />
-    </div>
+    </main>
   );
 };
 
