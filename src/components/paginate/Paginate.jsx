@@ -49,7 +49,9 @@ const Paginate = ({ templates, setPageTemplates }) => {
         <button>Previous</button>
       </div>
       <div className={styles.paginate__item}>
-        <span className={styles.active}>{currentPage}</span>
+        <span data-testId="currentPage" className={styles.active}>
+          {currentPage}
+        </span>
         <span>of</span>
         <span>{totalPages}</span>
       </div>
