@@ -13,9 +13,6 @@
     -o-border-radius: varr.$radius;
 
     position: relative;
-    z-index: 10000000 !important;
-
-    // overflow: hidden;
 
     legend {
       margin-left: 1.5rem;
@@ -27,7 +24,7 @@
   }
 }
 
-.selectholder {
+.select__holder {
   width: 100%;
   height: 100%;
   padding-left: 1.5rem;
